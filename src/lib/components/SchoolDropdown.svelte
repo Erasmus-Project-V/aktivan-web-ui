@@ -6,18 +6,20 @@
     let isOpen = false;
 </script>
 
-<div class="flex flex-col gap-4 items-center justify-center">
-    <div class="flex flex-row justify-center items-center gap-4">
-        <SchoolIndicator school="V. gimnazija" />
-        <button on:click={() => (isOpen = !isOpen)}>
-            {#if !isOpen}
-                <DownArrowIcon />
-            {:else}
-                <UpArrowIcon />
-            {/if}
-        </button>
+<div class="inline-block">
+    <div class="flex flex-col gap-4 items-center justify-center">
+        <div class="flex flex-row justify-center items-center gap-4">
+            <SchoolIndicator school="V. gimnazija" />
+            <button on:click={() => (isOpen = !isOpen)}>
+                {#if !isOpen}
+                    <DownArrowIcon />
+                {:else}
+                    <UpArrowIcon />
+                {/if}
+            </button>
+        </div>
+        {#if isOpen}
+            <slot />
+        {/if}
     </div>
-    {#if isOpen}
-        <slot />
-    {/if}
 </div>
