@@ -11,6 +11,7 @@
 }
 
 body {
+    @apply overflow-hidden;
     @apply font-roboto;
     @apply bg-light-gray-1;
 }

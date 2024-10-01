@@ -3,23 +3,29 @@
     import UpArrowIcon from "./icons/UpArrowIcon.svelte";
     import SchoolIndicator from "./SchoolIndicator.svelte";
 
-    let isOpen = false;
+    export let school: string;
+
+    export let open = false;
 </script>
 
-<div class="inline-block">
-    <div class="flex flex-col gap-4 items-center justify-center">
-        <div class="flex flex-row justify-center items-center gap-4">
-            <SchoolIndicator school="V. gimnazija" />
-            <button on:click={() => (isOpen = !isOpen)}>
-                {#if !isOpen}
-                    <DownArrowIcon />
-                {:else}
-                    <UpArrowIcon />
-                {/if}
-            </button>
+<div class="flex flex-col gap-4">
+    <div class="flex flex-row justify-start items-center gap-4">
+        <div class="justify-self-start">
+            <SchoolIndicator {school} />
         </div>
-        {#if isOpen}
-            <slot />
-        {/if}
+        <button on:click={() => (open = !open)}>
+            {#if !open}
+                <DownArrowIcon />
+            {:else}
+                <UpArrowIcon />
+            {/if}
+        </button>
+    </div>
+    <div class="w-full">
+        <div class="grid grid-cols-6">
+            {#if open}
+                <slot />
+            {/if}
+        </div>
     </div>
 </div>

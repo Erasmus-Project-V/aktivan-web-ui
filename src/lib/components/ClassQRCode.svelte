@@ -2,11 +2,7 @@
     export let imgSrc: string;
 </script>
 
-<div class="inline-block">
-    <div class="flex flex-col items-center justify-center gap-2">
-        <div class="size-36">
-            <img src={imgSrc} alt="QR Code" />
-        </div>
-        <span class="text-dark-blue text-sm font-semibold">Have students scan the QR code</span>
-    </div>
+<div class="flex flex-grow flex-col items-center justify-center gap-0">
+    <img class="size-64" src={imgSrc} alt="QR Code" />
+    <span class="text-dark-blue text-sm font-semibold">Have students scan the QR code</span>
 </div>

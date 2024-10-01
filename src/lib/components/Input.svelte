@@ -5,16 +5,21 @@
     export let type: "text" | "password" = "text";
     export let label: string;
     export let placeholder: string;
+    export let error: string = "";
+    export let value: string = "";
 
     let showPassword = false;
 </script>
 
 <div class="flex flex-col {$$props.class}">
     <span class="text-black pl-2">{label}</span>
-    <div class="{$$props.class} relative">
+    <div class="relative">
         <input
-            class="placeholder:text-sm text-light-gray-2 border-solid rounded-2xl h-12 w-72 p-4 bg-transparent border-[#E2E8F0] border-[1.5px]"
+            class="placeholder:text-sm text-light-gray-2 border-solid rounded-2xl h-12 w-72 p-4 bg-transparent border-[1.5px]
+                   {error ? 'border-red-500' : 'border-[#E2E8F0]'}"
+            on:input={() => error = ""}
             type={showPassword ? "text" : type}
+            bind:value={value}
             {placeholder}
         />
         {#if type === "password"}
@@ -30,4 +35,7 @@
             </button>
         {/if}
     </div>
+    {#if error}
+        <span class="text-red-500 text-sm mt-1">{error}</span>
+    {/if}
 </div>

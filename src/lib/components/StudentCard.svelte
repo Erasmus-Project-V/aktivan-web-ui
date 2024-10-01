@@ -5,7 +5,7 @@
 </script>
 
 <div
-    class="w-36 h-20 rounded-3xl border-2 border-white bg-[#F5F5F5] flex flex-col items-center justify-center gap-1"
+    class="w-32 h-20 rounded-3xl border-2 border-white bg-[#F5F5F5] flex flex-col items-center justify-center gap-1 drop-shadow-lg"
 >
     <PersonIconBlue width={28} height={28} />
     <span class="opacity-60 text-black text-sm">{studentName}</span>

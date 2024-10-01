@@ -14,17 +14,27 @@
     import ViewProfileDropdown from "$lib/components/ViewProfileDropdown.svelte";
     import ViewProfileDropdownOption from "$lib/components/ViewProfileDropdownOption.svelte";
     import PersonIconBlue from "$lib/components/icons/PersonIconBlue.svelte";
+    import EditInput from "$lib/components/EditInput.svelte";
+    import BackButton from "$lib/components/BackButton.svelte";
+    import MenuOption from "$lib/components/MenuOption.svelte";
+    import Checkbox from "$lib/components/Checkbox.svelte";
+    import ArrowCheckbox from "$lib/components/ArrowCheckbox.svelte";
+    import StudentList from "$lib/components/StudentList.svelte";
+    import StudentPointsCard from "$lib/components/StudentPointsCard.svelte";
+    import StudentExerciseList from "$lib/components/StudentExerciseList.svelte";
+    import ChosenSchool from "$lib/components/ChosenSchool.svelte";
 </script>
 
 <NavBar username="Fran" />
 <OutlinedButton>Sign Up</OutlinedButton>
-<Search />
+<Search results={["V. gimnazija", "XV. gimnazija"]} />
 <AddClassroomButton />
 <SchoolIndicator school="V. gimnazija" />
 <ChooseGrade grade="2.C" />
 <SchoolDropdown>
     <h1>Hi</h1>
 </SchoolDropdown>
+<ChosenSchool school="V. gimnazija" />
 <StudentCard studentName="Karlo Vizec" />
 <AddStudentButton />
 <ClassCard className="1.C" />
@@ -43,3 +53,11 @@
         <PersonIconBlue />
     </ViewProfileDropdownOption>
 </ViewProfileDropdown>
+<EditInput label="Email" />
+<BackButton />
+<MenuOption href="">Guide</MenuOption>
+<Checkbox />
+<ArrowCheckbox />
+<StudentList />
+<StudentPointsCard points={19} />
+<StudentExerciseList />
