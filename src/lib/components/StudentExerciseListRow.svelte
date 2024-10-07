@@ -3,8 +3,8 @@
 
     export let exerciseName: string;
     export let points: number;
-    export let km: number;
-    export let hours: number;
+    export let km: string;
+    export let hours: string;
 </script>
 
 <tr class="text-blue-gray font-bold border-y-2 border-light-gray-1 p-10 text-center text-2xl">

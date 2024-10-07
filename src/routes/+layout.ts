@@ -6,11 +6,14 @@ import type { LayoutLoad } from "./$types";
 import { pb } from "$lib/services/pb";
 
 export const load: LayoutLoad = async ({ route }) => {
-    const user = await pb.collection("teachers").getOne(localStorage.getItem("userId")!).catch((err) => {
-        if (err) {
-            localStorage.clear();
-        }
-    });
+    const user = await pb
+        .collection("teachers")
+        .getOne(localStorage.getItem("userId")!)
+        .catch((err) => {
+            if (err) {
+                localStorage.clear();
+            }
+        });
 
     pb.authStore.save(localStorage.getItem("authToken")!, user!);
 

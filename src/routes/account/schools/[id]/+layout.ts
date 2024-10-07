@@ -2,11 +2,9 @@ import type { LayoutLoad } from "./$types";
 import { pb } from "$lib/services/pb";
 
 export const load: LayoutLoad = async ({ params }) => {
-    const classroom = await pb.collection("classrooms").getOne(params.classId, {
-        expand: "students,school"
-    });
+    const school = await pb.collection("schools").getOne(params.id);
 
     return {
-        classroom
+        school
     };
 };

@@ -33,7 +33,7 @@
             <ClassOptions />
         </div>
     {/if}
-    <div
+    <!-- <div
         on:click={handleEllipsisClick}
         class="absolute right-3 top-2 p-1 cursor-pointer"
         role="button"
@@ -41,5 +41,5 @@
         on:keydown={(e) => e.key === "Enter" && handleEllipsisClick(e)}
     >
         <ElipsisIcon />
-    </div>
+    </div> -->
 </button>

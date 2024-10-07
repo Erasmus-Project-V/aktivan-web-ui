@@ -17,22 +17,30 @@
         <div class="flex flex-row items-center px-3">
             <BackButton href=".." />
         </div>
-        <div class="self-stretch">
-            <StudentList>
-                {#each data?.classroom?.expand?.students as student}
-                    <StudentListRow
-                        classId={data?.classroom?.id}
-                        studentId={student?.id}
-                        studentName={student?.username}
-                        totalPoints={19}
-                        runningPoints={11}
-                        skatingPoints={2}
-                        cyclingPoints={4}
-                        walkingPoints={0}
-                        hikingPoints={1}
-                    />
-                {/each}
-            </StudentList>
+        <div class="self-stretch overflow-y-auto items-center justify-center">
+            {#if data?.classroom?.expand?.students}
+                <StudentList>
+                    {#each data?.classroom?.expand?.students as student}
+                        <StudentListRow
+                            classId={data?.classroom?.id}
+                            studentId={student?.id}
+                            studentName="{student?.firstName} {student?.lastName}"
+                            totalPoints={0}
+                            runningPoints={0}
+                            skatingPoints={0}
+                            cyclingPoints={0}
+                            walkingPoints={0}
+                            hikingPoints={0}
+                        />
+                    {/each}
+                </StudentList>
+            {:else}
+                <div class="flex items-center justify-center h-full w-full">
+                    <span class="text-dark-blue font-bold text-4xl text-center"
+                        >Wow, such empty</span
+                    >
+                </div>
+            {/if}
         </div>
         <div class="mt-auto w-full flex flex-row justify-between">
             <SchoolIndicator school={data?.classroom?.expand?.school.name} />

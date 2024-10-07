@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { goto } from "$app/navigation";
     import AddClassroomButton from "$lib/components/AddClassroomButton.svelte";
     import ClassCard from "$lib/components/ClassCard.svelte";
     import ClassroomButton from "$lib/components/ClassroomButton.svelte";
@@ -11,11 +12,14 @@
     function groupClassroomsBySchool(classrooms: { school: string; name: string }[]) {
         const grouped = new Map<string, { school: string; classrooms: string[] }>();
 
-        classrooms.forEach(classroom => {
+        classrooms.forEach((classroom) => {
             if (grouped.has(classroom.school)) {
-                grouped.get(classroom.school)!.classrooms.push(classroom.name);
+                grouped.get(classroom.school)!.classrooms.push(classroom);
             } else {
-                grouped.set(classroom.school, { school: classroom?.expand.school.name, classrooms: [classroom] });
+                grouped.set(classroom.school, {
+                    school: classroom?.expand.school.name,
+                    classrooms: [classroom]
+                });
             }
         });
 
@@ -24,6 +28,7 @@
 
     // Group the classrooms by school
     const groupedSchools = groupClassroomsBySchool(data.classrooms);
+    console.log(groupedSchools);
 </script>
 
 <main class="py-16 px-24">
@@ -32,7 +37,10 @@
             {#each school.classrooms as classroom}
                 <ClassroomButton classroomId={classroom.id} classroom={classroom.name} />
             {/each}
-<!--            <AddClassroomButton />-->
+            <AddClassroomButton
+                on:click={() =>
+                    goto(`/account/schools/${school.classrooms[0]?.expand?.school?.id}/add-class`)}
+            />
         </SchoolDropdown>
     {/each}
 </main>

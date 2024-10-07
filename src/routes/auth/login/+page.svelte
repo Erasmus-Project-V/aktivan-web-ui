@@ -10,19 +10,17 @@
     let identity: string;
     let password: string;
 
+    let rememberMe: boolean = false;
+
     async function signIn() {
         try {
-            const authData = await pb.collection("teachers").authWithPassword(
-                identity,
-                password
-            );
+            const authData = await pb.collection("teachers").authWithPassword(identity, password);
 
-            console.log(authData);
             localStorage.setItem("authToken", authData.token);
             localStorage.setItem("userId", authData.record.id);
         } catch (err: any) {
             if (err.status === 400) {
-                error = "Invalid credentials";
+                (window as unknown as any).displayAlert("Invalid credentials", "error");
             }
         }
 
@@ -42,20 +40,32 @@
             activities, track their progress, and celebrate their achievements!
         </p>
         <div class="bg-white px-12 h-[25rem] rounded-2xl flex flex-col items-center gap-6 py-6">
-            <Input {error} bind:value={identity} label="Email" type="text" placeholder="Your email address" />
-            <Input {error} bind:value={password} label="Password" type="password" placeholder="Your password" />
+            <Input
+                {error}
+                bind:value={identity}
+                label="Email"
+                type="text"
+                placeholder="Your email address"
+            />
+            <Input
+                {error}
+                bind:value={password}
+                label="Password"
+                type="password"
+                placeholder="Your password"
+            />
             <a class="text-dark-blue self-end -mb-4 -mt-4" href="/auth/forgot-password"
                 >Forgot password?
             </a>
             <span class="w-full flex items-center gap-2 justify-start">
-                <Checkbox class="self-start" />
+                <Checkbox bind:checked={rememberMe} class="self-start" />
                 Remember me
             </span>
             <Button on:click={signIn} size="lg">Sign In</Button>
-<!--            <span class="text-light-gray-2">-->
-<!--                Don't have an account yet?-->
-<!--                <a href="/auth/signup" class="text-dark-blue font-bold">Sign Up</a>-->
-<!--            </span>-->
+            <!--            <span class="text-light-gray-2">-->
+            <!--                Don't have an account yet?-->
+            <!--                <a href="/auth/signup" class="text-dark-blue font-bold">Sign Up</a>-->
+            <!--            </span>-->
         </div>
     </div>
     <!-- </div> -->
