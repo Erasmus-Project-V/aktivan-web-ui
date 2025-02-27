@@ -25,12 +25,12 @@
                             classId={data?.classroom?.id}
                             studentId={student?.id}
                             studentName="{student?.firstName} {student?.lastName}"
-                            totalPoints={0}
-                            runningPoints={0}
-                            skatingPoints={0}
-                            cyclingPoints={0}
-                            walkingPoints={0}
-                            hikingPoints={0}
+                            totalPoints={student.activityPoints["total"]}
+                            runningPoints={student.activityPoints["running"]}
+                            skatingPoints={student.activityPoints["skating"]}
+                            cyclingPoints={student.activityPoints["cycling"]}
+                            walkingPoints={student.activityPoints["walking"]}
+                            hikingPoints={student.activityPoints["hiking"]}
                         />
                     {/each}
                 </StudentList>

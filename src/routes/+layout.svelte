@@ -4,6 +4,9 @@
     import Alert from "$lib/components/Alert.svelte";
 </script>
 
+<svelte:head>
+    <title>aktiVan</title>
+</svelte:head>
 <Alert />
 
 <slot />

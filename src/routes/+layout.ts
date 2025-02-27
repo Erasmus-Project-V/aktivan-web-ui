@@ -22,7 +22,7 @@ export const load: LayoutLoad = async ({ route }) => {
             redirect(307, "/account/schools");
         }
     } else {
-        if (!route.id?.includes("/auth")) {
+        if (!route.id?.includes("/auth") && !route.id?.includes("/about/")) {
             redirect(307, "/auth/login");
         }
     }

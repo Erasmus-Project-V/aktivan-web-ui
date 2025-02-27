@@ -24,8 +24,6 @@
 
     const studentActivities = data.studentActivities;
 
-    console.log(studentActivities);
-
     const activities: Map<string, { points: number; km: number; hours: number }> = new Map([]);
 
     studentActivities.forEach((activity: any) => {
@@ -61,13 +59,14 @@
                     >{student.firstName} {student.lastName}</span
                 >
             </div>
-            <StudentPointsCard points={0} />
+            <StudentPointsCard points={data.activityPoints["total"]} />
         </div>
         <div class="self-stretch -mt-8">
             <StudentExerciseList>
                 <StudentExerciseListRow
                     exerciseName="Running"
-                    points={0}
+                    exerciseId="running"
+                    points={data.activityPoints["running"]}
                     km={activities?.get("running")?.km?.toFixed(2) ?? "0.00"}
                     hours={activities?.get("running")?.hours?.toFixed(2) ?? "0.00"}
                 >
@@ -75,7 +74,8 @@
                 </StudentExerciseListRow>
                 <StudentExerciseListRow
                     exerciseName="Walking"
-                    points={0}
+                    exerciseId="walking"
+                    points={data.activityPoints["walking"]}
                     km={activities?.get("walking")?.km?.toFixed(2) ?? "0.00"}
                     hours={activities?.get("walking")?.hours?.toFixed(2) ?? "0.00"}
                 >
@@ -83,7 +83,8 @@
                 </StudentExerciseListRow>
                 <StudentExerciseListRow
                     exerciseName="Hiking"
-                    points={0}
+                    exerciseId="hiking"
+                    points={data.activityPoints["hiking"]}
                     km={activities?.get("hiking")?.km?.toFixed(2) ?? "0.00"}
                     hours={activities?.get("hiking")?.hours?.toFixed(2) ?? "0.00"}
                 >
@@ -91,7 +92,8 @@
                 </StudentExerciseListRow>
                 <StudentExerciseListRow
                     exerciseName="Cycling"
-                    points={0}
+                    exerciseId="cycling"
+                    points={data.activityPoints["cycling"]}
                     km={activities?.get("cycling")?.km?.toFixed(2) ?? "0.00"}
                     hours={activities?.get("cycling")?.hours?.toFixed(2) ?? "0.00"}
                 >
@@ -99,7 +101,7 @@
                 </StudentExerciseListRow>
                 <StudentExerciseListRow
                     exerciseName="Skating"
-                    points={0}
+                    points={data.activityPoints["skating"]}
                     km={activities?.get("skating")?.km?.toFixed(2) ?? "0.00"}
                     hours={activities?.get("skating")?.hours?.toFixed(2) ?? "0.00"}
                 >

@@ -1,7 +1,9 @@
 <script lang="ts">
-    import AccountIcon from "./icons/AccountIcon.svelte";
+    import { goto } from "$app/navigation";
+    import { page } from "$app/stores";
 
     export let exerciseName: string;
+    export let exerciseId: string;
     export let points: number;
     export let km: string;
     export let hours: string;
@@ -17,7 +19,12 @@
     <td>{points}</td>
     <td>{km}</td>
     <td>{hours}</td>
-    <!-- <td>
-        <button class="text-black opacity-50 font-bold text-xl"> History </button>
-    </td> -->
+    <td>
+        <button
+            on:click={() => goto(`${window.location.href}/activities/${exerciseId}`)}
+            class="text-black opacity-50 font-bold text-xl"
+        >
+            History
+        </button>
+    </td>
 </tr>
