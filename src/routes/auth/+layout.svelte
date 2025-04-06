@@ -6,7 +6,7 @@
 </script>
 
 <main class="flex flex-col gap-5 items-center w-screen h-screen overflow-clip pt-10">
-    <div class="mb-5 relative flex flex-grow flex-col gap-5 items-center w-screen">
+    <div class="mb-5 relative flex grow flex-col gap-5 items-center w-screen">
         <div class="w-11/12 rounded-3xl relative" style="height: 75vh;">
             <span class="absolute top-6 left-16 flex flex-row items-center gap-4 text-sm">
                 <img src={aktivanLogo} alt="aktiVan logo" />

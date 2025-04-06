@@ -9,7 +9,7 @@
     let showOptions = false;
 
     function handleMainClick() {
-        goto(`/account/schools/classes/${classroomId}`);
+        goto(`/dashboard/schools/classes/${classroomId}`);
         console.log("Main area clicked");
     }
 
@@ -24,7 +24,7 @@
     class="relative size-64 bg-white drop-shadow-xl flex items-center justify-center rounded-3xl"
 >
     <div
-        class="bg-light-gray-1 border-2 border-white size-24 flex items-center justify-center rounded-2xl drop-shadow-sm"
+        class="bg-light-gray-1 border-2 border-white size-24 flex items-center justify-center rounded-2xl drop-shadow-xs"
     >
         <span class="text-dark-blue font-bold text-4xl">{classroom}</span>
     </div>

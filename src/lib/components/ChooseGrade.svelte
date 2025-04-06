@@ -1,4 +1,4 @@
-<script lang="ts">
+      <script lang="ts">
     import ElipsisIcon from "./icons/ElipsisIcon.svelte";
 
     export let grade: string;
@@ -23,7 +23,7 @@
     class="size-64 bg-white drop-shadow-xl flex items-center justify-center rounded-3xl relative"
 >
     <div
-        class="size-20 rounded-2xl bg-light-gray-1 border-2 border-white drop-shadow flex items-center justify-center"
+        class="size-20 rounded-2xl bg-light-gray-1 border-2 border-white drop-shadow-sm flex items-center justify-center"
     >
         <span class="text-dark-blue font-bold text-4xl no-select">{grade}</span>
     </div>

@@ -11,7 +11,7 @@
 </script>
 
 <button
-    class="{$$props.class} inline-flex items-center cursor-pointer focus:outline-none"
+    class="{$$props.class} inline-flex items-center cursor-pointer focus:outline-hidden"
     on:click={toggle}
     aria-checked={checked}
     role="switch"

@@ -32,14 +32,14 @@
 </script>
 
 <main class="py-16 px-24">
-    {#each groupedSchools as school}
+    {#each groupedSchools as school (school.id)}
         <SchoolDropdown school={school.school} open={true}>
-            {#each school.classrooms as classroom}
+            {#each school.classrooms as classroom (classroom.id)}
                 <ClassroomButton classroomId={classroom.id} classroom={classroom.name} />
             {/each}
             <AddClassroomButton
                 on:click={() =>
-                    goto(`/account/schools/${school.classrooms[0]?.expand?.school?.id}/add-class`)}
+                    goto(`/dashboard/schools/${school.classrooms[0]?.expand?.school?.id}/add-class`)}
             />
         </SchoolDropdown>
     {/each}

@@ -31,7 +31,7 @@
         const createData = {
             name: className,
             school: data.school?.id,
-            teachers: [pb.authStore.model.id]
+            teachers: [pb.authStore.record.id]
         };
 
         await pb.collection("classrooms").create(createData);

@@ -4,6 +4,7 @@
     import Input from "$lib/components/Input.svelte";
     import { pb } from "$lib/services/pb";
     import { goto } from "$app/navigation";
+    import { signIn } from "$lib/services/users";
 
     let error: string;
 
@@ -12,27 +13,27 @@
 
     let rememberMe: boolean = false;
 
-    async function signIn() {
-        try {
-            const authData = await pb.collection("teachers").authWithPassword(identity, password);
-
-            localStorage.setItem("authToken", authData.token);
-            localStorage.setItem("userId", authData.record.id);
-        } catch (err: any) {
-            if (err.status === 400) {
-                (window as unknown as any).displayAlert("Invalid credentials", "error");
-            }
-        }
-
-        await goto("/account/schools");
-    }
+    // async function signIn() {
+    //     try {
+    //         const authData = await pb.collection("teachers").authWithPassword(identity, password);
+    //
+    //         localStorage.setItem("authToken", authData.token);
+    //         localStorage.setItem("userId", authData.record.id);
+    //     } catch (err: any) {
+    //         if (err.status === 400) {
+    //             (window as unknown as any).displayAlert("Invalid credentials", "error");
+    //         }
+    //     }
+    //
+    //     await goto("/account/schools");
+    // }
 </script>
 
 <!-- <Header>Welcome!</Header>
 
 <Button>Sign Up</Button> -->
 <div class="w-full h-full flex flex-col justify-center items-center">
-    <!-- <div class="flex flex-col flex-grow"> -->
+    <!-- <div class="flex flex-col grow"> -->
     <div class="w-96 gap-3 h-full flex flex-col items-center justify-center">
         <h1 class="text-white text-4xl font-bold">Welcome!</h1>
         <p class="text-white text-center">
@@ -61,7 +62,7 @@
                 <Checkbox bind:checked={rememberMe} class="self-start" />
                 Remember me
             </span>
-            <Button on:click={signIn} size="lg">Sign In</Button>
+            <Button on:click={() => signIn(identity, password)} size="lg">Sign In</Button>
             <!--            <span class="text-light-gray-2">-->
             <!--                Don't have an account yet?-->
             <!--                <a href="/auth/signup" class="text-dark-blue font-bold">Sign Up</a>-->

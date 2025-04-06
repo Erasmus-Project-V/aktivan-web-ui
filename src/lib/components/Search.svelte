@@ -11,12 +11,12 @@
     }
 </script>
 
-<div class="drop-shadow-sm">
+<div class="drop-shadow-xs">
     <div class="flex items-center text-black relative m-0 p-0">
         <input
             placeholder="Search"
             type="text"
-            class="text-black text-opacity-60 placeholder-black placeholder-opacity-60 py-4 px-14 bg-white rounded-lg w-96 drop-shadow-sm h-11 border-light-gray-1 border-[0.1rem]"
+            class="text-black text-opacity-60 placeholder-black placeholder-opacity-60 py-4 px-14 bg-white rounded-lg w-96 drop-shadow-xs h-11 border-light-gray-1 border-[0.1rem]"
         />
         <SearchIcon class="absolute left-4" />
     </div>

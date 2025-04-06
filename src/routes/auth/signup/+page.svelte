@@ -8,7 +8,7 @@
 
 <Button>Sign Up</Button> -->
 <div class="w-full h-full flex flex-col justify-center items-center">
-    <!-- <div class="flex flex-col flex-grow"> -->
+    <!-- <div class="flex flex-col grow"> -->
     <div class="w-96 gap-3 h-full flex flex-col items-center justify-center">
         <h1 class="text-white text-4xl font-bold">Welcome!</h1>
         <p class="text-white text-center">

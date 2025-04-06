@@ -25,6 +25,6 @@
     <td>{walkingPoints}</td>
     <td>{skatingPoints}</td>
     <td>
-        <button on:click={() => goto(`/account/schools/classes/${classId}/students/${studentId}`)} class="text-black opacity-50 font-bold text-lg"> View </button>
+        <button on:click={() => goto(`/dashboard/schools/classes/${classId}/students/${studentId}`)} class="text-black opacity-50 font-bold text-lg"> View </button>
     </td>
 </tr>

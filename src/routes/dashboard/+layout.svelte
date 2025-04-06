@@ -4,7 +4,7 @@
 </script>
 
 <div class="flex justify-center mt-5">
-    <NavBar username={pb.authStore.model?.firstName ?? "Login"} />
+    <NavBar username={pb.authStore.record?.firstName ?? "Login"} />
 </div>
 
 <div class="w-full h-full">

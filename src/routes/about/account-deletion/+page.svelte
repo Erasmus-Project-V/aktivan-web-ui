@@ -4,7 +4,7 @@
 
 <div class="w-screen h-screen flex justify-center">
     <div
-        class="flex flex-col items-start gap-10 rounded-3xl w-[97.5vw] h-[75vh] bg-white mt-8 px-16 pb-4 pt-10"
+        class="flex flex-col items-start gap-10 rounded-3xl w-[97.5vw] h-[75vh] bg-white mt-8 px-16 pb-4 pt-10 overflow-y-auto"
     >
         <div class="flex flex-row items-center px-3">
             <BackButton href="/account/schools" />
@@ -13,7 +13,7 @@
         <div class="w-full flex flex-col items-center gap-8">
             <h1 class="text-dark-blue text-3xl font-bold uppercase">Account Deletion</h1>
 
-            <div class="max-w-2xl text-center flex flex-col gap-6">
+            <div class="max-w-2xl text-center flex flex-col gap-6 overflow-y-auto">
                 <p class="text-lg text-dark-blue">
                     To delete your account and all associated data from aktiVan, please send an
                     email to:

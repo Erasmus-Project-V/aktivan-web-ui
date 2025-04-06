@@ -41,7 +41,7 @@
 {#if showAlert}
     <div
         transition:fade
-        class="z-[9999] text-left flex flex-row items-center justify-start gap-2 fixed bottom-4 left-4 w-72 py-3 px-4 rounded-lg shadow-md {getAlertColor(
+        class="z-9999 text-left flex flex-row items-center justify-start gap-2 fixed bottom-4 left-4 w-72 py-3 px-4 rounded-lg shadow-md {getAlertColor(
             alertType
         )}"
     >

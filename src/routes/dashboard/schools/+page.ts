@@ -3,7 +3,7 @@ import { pb } from "$lib/services/pb";
 
 export const load: PageLoad = async () => {
     const classrooms = await pb.collection("classrooms").getFullList({
-        filter: `(teachers~"${pb.authStore.model!.id}")`,
+        filter: `(teachers~"${pb.authStore.record?.id}")`,
         expand: "teachers,students,school"
     });
 

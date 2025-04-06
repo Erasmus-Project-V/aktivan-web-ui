@@ -16,14 +16,14 @@
             <input
                 bind:value
                 {readonly}
-                class="text-lg font-semibold p-3 h-10 w-[inherit] bg-light-gray-1 drop-shadow-sm rounded-2xl border-2 border-white"
+                class="text-lg font-semibold p-3 h-10 w-[inherit] bg-light-gray-1 drop-shadow-xs rounded-2xl border-2 border-white"
                 type="text"
             />
         {:else if type === "text"}
             <input
                 bind:value
                 {readonly}
-                class="text-lg font-semibold p-3 h-10 w-[inherit] bg-light-gray-1 drop-shadow-sm rounded-2xl border-2 border-white"
+                class="text-lg font-semibold p-3 h-10 w-[inherit] bg-light-gray-1 drop-shadow-xs rounded-2xl border-2 border-white"
                 type="password"
             />
         {/if}
